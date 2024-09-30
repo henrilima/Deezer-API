@@ -44,4 +44,15 @@ app.get('/api/tracks', async (req, res) => {
   }
 });
 
+// Rota de teste
+
+app.get('/api/test', (req, res) => {
+  res.json({ message: 'API rodando!' });
+});
+
+// Iniciando a API
+app.listen(port, () => {
+  console.log(`API rodando na porta ${port}`);
+});
+
 export default app;
