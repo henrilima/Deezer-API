@@ -10,7 +10,7 @@ Esta API permite a pesquisa de artistas, álbuns e músicas usando a API do Deez
 - **Lista de Faixas do Álbum**: O endpoint `GET /api/tracklist?q={id_do_album}` retorna a lista de faixas de um álbum específico.
 - **Geração de Canvas**: O endpoint `POST /canvas` cria uma imagem personalizada no formato PNG com detalhes do artista e suas cinco principais músicas, retornada como Blob. Para gerar o canvas, envie um corpo JSON contendo as seguintes propriedades:
 
-  ```json
+  ```json5
   {
     "artist": {
       "name": "Nome do Artista", // -> OBRIGATÓRIO
