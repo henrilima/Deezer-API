@@ -1,15 +1,33 @@
 {
-  "name": "deezer",
+  "name": "topsongs-api",
+  "displayName": "TopSongs API",
   "version": "1.0.0",
-  "main": "api/index.js",
+  "main": "src/index.js",
   "type": "module",
-  "license": "MIT",
+  "license": "Apache-2.0",
+  "author": {
+    "name": "Henrique Lima",
+    "email": "henrilima.contactme@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/henrilima/TopSongs-API.git"
+  },
   "dependencies": {
     "axios": "^1.7.7",
+    "body-parser": "^1.20.3",
+    "canvas": "^2.11.2",
     "cors": "^2.8.5",
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "fs": "^0.0.1-security",
+    "path": "^0.12.7",
+    "url": "^0.11.4"
   },
   "scripts": {
-    "start": "node ."
+    "start": "node .",
+    "dev": "nodemon ."
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.7"
   }
 }
