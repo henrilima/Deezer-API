@@ -23,20 +23,18 @@ registerFont(path.join(__dirname, "..", "fonts", "Montserrat.ttf"), {
 router.post("/canvas", async (req, res) => {
     const body = req.body;
 
-    const imgPath = path.join(__dirname, "..", "images", "canvas.png");
     const numbersPath = path.join(__dirname, "..", "images", "numbers.png");
     const canvas = createCanvas(1080, 1920);
     const ctx = canvas.getContext("2d");
 
     try {
         // Lê a imagem do sistema de arquivos
-        const imageBuffer = fs.readFileSync(imgPath);
         const numbersBuffer = fs.readFileSync(numbersPath);
-        const image = await loadImage(imageBuffer);
         const numbersImage = await loadImage(numbersBuffer);
 
-        // Preenche o canvas com a imagem
-        ctx.drawImage(image, 0, 0, canvas.width, canvas.height);
+        // Preenche o canvas com a cor de fundo
+        ctx.fillStyle = body.artist?.bodyColor || "#0E131F";
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
 
         // Determina o caminho do SVG com base no tipo recebido
         const svgFillList = ['3', '4'];
